@@ -3,7 +3,7 @@ services:
     name: openclaw
     env: image
     image:
-      url: ghcr.io/openclaw/openclaw:latest
+      url: ghcr.io/openclaw/openclaw:2026.6.8-beta.1-browser
     plan: free
     healthCheckPath: /health
     envVars:
