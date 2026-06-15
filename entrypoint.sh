@@ -6,7 +6,8 @@ cat > "$OPENCLAW_STATE_DIR/openclaw.json" <<JSON
   "gateway": {
     "controlUi": {
       "allowedOrigins": ["https://openclaw-nj79.onrender.com"],
-      "dangerouslyAllowHostHeaderOriginFallback": true
+      "dangerouslyAllowHostHeaderOriginFallback": true,
+      "dangerouslyDisableDeviceAuth": true
     }
   }
 }
