@@ -3,17 +3,22 @@ services:
     name: openclaw
     env: image
     image:
-      url: ghcr.io/openclaw/openclaw:2026.6.8-beta.1-browser # If you are using your own registry image, replace this URL
+      url: ghcr.io/openclaw/openclaw:2026.6.8-beta.1-browser
     plan: free
     healthCheckPath: /health
+    # This overrides the default container start command to bypass the configuration block
+    dockerCommand: openclaw start --allow-unconfigured
     envVars:
       - key: PORT
-        value: "8080" # Render requires a PORT variable telling it where traffic goes
+        value: "8080"
       - key: OPENCLAW_GATEWAY_PORT
         value: "8080"
+      - key: OPENCLAW_GATEWAY_MODE
+        value: "local" # Tells the gateway to run in local single-instance mode
       - key: OPENCLAW_STATE_DIR
         value: /data/.openclaw
       - key: OPENCLAW_WORKSPACE_DIR
         value: /data/workspace
       - key: OPENCLAW_GATEWAY_TOKEN
         generateValue: true
+        
