@@ -6,13 +6,14 @@ services:
       url: ghcr.io/openclaw/openclaw:2026.6.8-beta.1-browser
     plan: free
     healthCheckPath: /health
+    dockerCommand: openclaw gateway run --allow-unconfigured
     envVars:
       - key: PORT
         value: "8080"
       - key: OPENCLAW_GATEWAY_PORT
         value: "8080"
-      - key: OPENCLAW_DEV
-        value: "true" # Forces automatic workspace/config generation on missing environments
+      - key: OPENCLAW_GATEWAY_MODE
+        value: "local"
       - key: OPENCLAW_STATE_DIR
         value: /data/.openclaw
       - key: OPENCLAW_WORKSPACE_DIR
