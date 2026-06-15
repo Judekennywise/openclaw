@@ -18,5 +18,7 @@ services:
         value: /tmp/.openclaw
       - key: OPENCLAW_WORKSPACE_DIR
         value: /tmp/workspace
+      - key: OPENCLAW_CONTROLUI_ALLOWED_ORIGINS
+        value: "https://openclaw-nj79.onrender.com"
       - key: OPENCLAW_GATEWAY_TOKEN
         generateValue: true
