@@ -1,0 +1,6 @@
+FROM ghcr.io/openclaw/openclaw:2026.6.8-beta.1-browser
+COPY entrypoint.sh /entrypoint.sh
+USER root
+RUN chmod +x /entrypoint.sh
+USER node
+ENTRYPOINT ["/entrypoint.sh"]
