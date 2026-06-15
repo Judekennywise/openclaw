@@ -6,19 +6,18 @@ services:
       url: ghcr.io/openclaw/openclaw:2026.6.8-beta.1-browser
     plan: free
     healthCheckPath: /health
-    # This overrides the default container start command to bypass the configuration block
-    dockerCommand: openclaw start --allow-unconfigured
     envVars:
       - key: PORT
         value: "8080"
       - key: OPENCLAW_GATEWAY_PORT
         value: "8080"
+      - key: OPENCLAW_FLAGS
+        value: "--allow-unconfigured" # Safely injects the setup-bypass flag to the binary
       - key: OPENCLAW_GATEWAY_MODE
-        value: "local" # Tells the gateway to run in local single-instance mode
+        value: "local"
       - key: OPENCLAW_STATE_DIR
         value: /data/.openclaw
       - key: OPENCLAW_WORKSPACE_DIR
         value: /data/workspace
       - key: OPENCLAW_GATEWAY_TOKEN
         generateValue: true
-        
