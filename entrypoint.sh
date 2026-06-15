@@ -9,6 +9,19 @@ cat > "$OPENCLAW_STATE_DIR/openclaw.json" <<JSON
       "dangerouslyAllowHostHeaderOriginFallback": true,
       "dangerouslyDisableDeviceAuth": true
     }
+  },
+  "models": {
+    "providers": {
+      "nvidia": {
+        "baseUrl": "https://integrate.api.nvidia.com/v1",
+        "api": "openai-completions"
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": { "primary": "nvidia/nvidia/nemotron-3-ultra-550b-a55b" }
+    }
   }
 }
 JSON
