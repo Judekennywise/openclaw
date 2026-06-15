@@ -18,3 +18,5 @@ services:
         value: /tmp/workspace
       - key: OPENCLAW_GATEWAY_TOKEN
         generateValue: true
+      - key: NVIDIA_API_KEY
+        value: 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
