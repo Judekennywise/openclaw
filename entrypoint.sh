@@ -24,7 +24,17 @@ cat > "$OPENCLAW_STATE_DIR/openclaw.json" <<JSON
       "model": { "primary": "nvidia/nvidia/nemotron-3-ultra-550b-a55b" },
       "timeoutSeconds": 500
     }
+  },
+  "channels": {
+    "telegram": {
+      "enabled": true,
+      "botToken": "8842543688:AAGgL5TcsGbT8wANygOsJ8BXj7FVkgG8L4s",
+      "dmPolicy": "allowlist",
+      "allowFrom": ["tg:6220157483"]
+    }
   }
 }
 JSON
 exec openclaw gateway run --allow-unconfigured --bind lan
+openclaw clawhub install imap-smtp-email \
+  || echo "[entrypoint] email skill install failed; gateway will start without it"
