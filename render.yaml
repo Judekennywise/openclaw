@@ -20,3 +20,21 @@ services:
         generateValue: true
       - key: NVIDIA_API_KEY
         value: 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
+      - key: IMAP_HOST
+        value: imap.gmail.com
+      - key: IMAP_PORT
+        value: "993"
+      - key: IMAP_USER
+        value: judeokennywise@gmail.com
+      - key: IMAP_PASS
+        value: qiupbvpwiubbxobg
+      - key: SMTP_HOST
+        value: smtp.gmail.com
+      - key: SMTP_PORT
+        value: "587"
+      - key: SMTP_SECURE
+        value: "false"
+      - key: SMTP_USER
+        value: judeokennywise@gmail.com
+      - key: SMTP_PASS
+        value: qiupbvpwiubbxobg
