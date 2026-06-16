@@ -14,13 +14,15 @@ cat > "$OPENCLAW_STATE_DIR/openclaw.json" <<JSON
     "providers": {
       "nvidia": {
         "baseUrl": "https://integrate.api.nvidia.com/v1",
-        "api": "openai-completions"
+        "api": "openai-completions",
+        "timeoutSeconds": 500
       }
     }
   },
   "agents": {
     "defaults": {
-      "model": { "primary": "nvidia/nvidia/nemotron-3-ultra-550b-a55b" }
+      "model": { "primary": "nvidia/nvidia/nemotron-3-ultra-550b-a55b" },
+      "timeoutSeconds": 500
     }
   }
 }
