@@ -21,7 +21,7 @@ cat > "$OPENCLAW_STATE_DIR/openclaw.json" <<JSON
   },
   "agents": {
     "defaults": {
-      "model": { "primary": "nvidia/nvidia/nemotron-3-ultra-550b-a55b" },
+      "model": { "primary": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning" },
       "timeoutSeconds": 500
     }
   },
